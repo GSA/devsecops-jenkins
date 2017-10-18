@@ -1,3 +1,18 @@
+# Ansible
+ansible/**/*.retry
+ansible/group_vars/*
+ansible/roles/external/*
+ansible/ssh.cfg
+ansible/src/
+ansible/tmp/*
+!ansible/tmp/.keep
+secrets.yml
+.vault_pass.txt
+*.pem
+~$*
+*.pyc
+jenkins-jobs/jenkins-backup/job.xml
+
 ## Terraform ##
 #
 # Ignore private variables
@@ -6,5 +21,6 @@
 # Compiled files
 *.tfstate*
 #
-# Module directory
+# Module directories
 .terraform/
+modules/

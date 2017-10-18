@@ -1,5 +1,5 @@
 module "mgmt_vpc" {
-  source = "github.com/gsa/DevSecOps-Infrastructure//terraform//modules//vpc"
+  source = "github.com/terraform-aws-modules/terraform-aws-vpc"
 
   name = "${var.vpc_name}"
 
@@ -23,13 +23,13 @@ module "mgmt_vpc" {
   }
 }
 
-module "app_vpc_flow_log" {
-  source = "modules/vpc_flow_log"
+module "vpc_flow_log" {
+  source = "github.com/GSA/DevSecOps-Infrastructure//terraform//modules//vpc_flow_log"
   vpc_name = "${var.vpc_name}"
-  vpc_id = "${module.devsecops_vpc.vpc_id}"
+  vpc_id = "${module.mgmt_vpc.vpc_id}"
 }
 
 resource "aws_route53_zone" "vpc_private_zone" {
   name = "${var.private_vpc_zone_name}"
-  vpc_id = "${module.devsecops_vpc.vpc_id}"
+  vpc_id = "${module.mgmt_vpc.vpc_id}"
 }
