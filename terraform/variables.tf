@@ -12,6 +12,13 @@ variable "private_vpc_zone_name" {
 variable "vpc_name" {
   type = "string"
 }
+variable "jenkins_key_name" {
+  description = "The key pair name for the Jenkins instance. The key pair must already exist in the AWS account."
+  type = "string"
+}
+variable "jenkins_backup_s3_bucket" {
+  description = "Name of an S3 bucket to backup the jenkins configuration."
+}
 variable "region" {
   default = "us-east-1"
 }
@@ -52,11 +59,6 @@ variable "devsecops_iam_log_role_name" {
 variable "devsecops_flow_log_policy" {
   default = "vpc_flow_log_policy"
   description = "name for the log policy to attach to the VPCs"
-}
-variable "jenkins_key_name" {
-  description = "The key pair name for the Jenkins instance. The key pair must already exist in the AWS account."
-  type = "string"
-  default = "jenkins-master"
 }
 variable "jenkins_sg_name" {
   description = "The name of the new Jenkins security group."
@@ -102,10 +104,6 @@ variable "jenkins_vm_user" {
   description = "Name of the ssh user to use."
   type = "string"
   default = "ec2-user"
-}
-variable "jenkins_backup_s3_bucket" {
-  description = "Name of an S3 bucket to backup the jenkins configuration."
-  default = "devsecops-jenkins-master-backup"
 }
 variable "jenkins_backup_s3_key" {
   description = "Folder key to use in the S3 backup bucket."

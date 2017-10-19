@@ -1,29 +1,73 @@
+# The following variables MUST be set by you. They do not have defaults defined.
 # On most strings, note the following: only lowercase alphanumeric characters, hyphens, underscores, periods, and spaces allowed.
 aws_az1 = "<aws az1>"
 aws_az2 = "<aws az2>"
 vpc_name = "<name of mgmt VPC>"
 private_vpc_zone_name = "<dns-name-of-zone.tld>"
+jenkins_key_name = "<key-pair-name>"
+jenkins_backup_s3_bucket = "s3-bucket-name"
+
+# The remaining variables can be removed or commented out, as they have defaults. Regardless of that, please make sure you consult with your operations group to make sure you get the proper CIDR ranges for your VPC. To customize the variable, uncomment it and replace the default value provided.
 
 # Type: String (but make it a CIDR range like 10.0.0.0/16)
-vpc_cidr = "<cidr range>"
+# vpc_cidr = "10.0.0.0/16"
 
 # Type: List (but make it a CIDR range like 10.0.0.0/16)
-app_public_subnet_cidrs = ["<cidr range>", "<cidr range>"]
+# app_public_subnet_cidrs = ["10.0.1.0/24", "10.0.2.0/24"]
 
 # Type: List (but make it a CIDR range like 10.0.0.0/16)
-app_private_subnet_cidrs = ["<cidr range>", "<cidr range>"]
+# app_private_subnet_cidrs = ["10.0.10.0/24", "10.0.20.0/24"]
 
 # Type: List, comma-delimited (but make them a CIDR range like 10.0.0.0/16)
-database_subnet_cidrs = ["<cidr range>", "<cidr range>"]
+# database_subnet_cidrs = ["10.0.100.0/24", "10.0.101.0/24"]
 
 # Type: string, only "true" or "false" valid
-enable_nat_gateway = "<true or false>"
+# enable_nat_gateway = "true"
 
 # Type: string, only "true" or "false" valid
-enable_dns_hostnames = "<true or false>"
+# enable_dns_hostnames = "true"
 
 # Type: string, only "true" or "false" valid
-enable_dns_support = "<true or false>"
+# enable_dns_support = "true"
 
 # Type: string, only "true" or "false" valid
-create_database_subnet_group = "<true or false>"
+# create_database_subnet_group = "true"
+
+# Type: string
+# app_flow_log_group_name = "vpc_app_flow_logs"
+
+# Type: string
+# devsecops_iam_log_role_name = "vpc_flow_log_role"
+
+# Type: string
+# devsecops_flow_log_policy = "vpc_flow_log_policy"
+
+# Type: string
+# jenkins_sg_name = "sg_jenkins_master"
+
+# Type: List (but make it a CIDR range like 10.0.0.0/16)
+# jenkins_http_cidrs = ["0.0.0.0/0"]
+
+# Type: List (but make it a CIDR range like 10.0.0.0/16)
+# jenkins_ssh_cidrs = ["0.0.0.0/0"]
+
+# Type: string
+# jenkins_master_name = "jenkins-master"
+
+# Type: string
+# jenkins_ami_id = "ami-a8d369c0"
+
+# Type: string
+# jenkins_instance_type = "m4.xlarge"
+
+# Type: string
+# jenkins_iam_role_name = "jenkins_master_ec2_role"
+
+# Type: string
+# jenkins_private_master_dns = "jenkins-master.devsecops.local"
+
+# Type: string
+# jenkins_vm_user = "ec2-user"
+
+# Type: string
+# jenkins_backup_s3_key = "jenkins_master_backup"
