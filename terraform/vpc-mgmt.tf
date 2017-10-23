@@ -1,5 +1,5 @@
 module "mgmt_vpc" {
-  source = "github.com/terraform-aws-modules/terraform-aws-vpc"
+  source = "github.com/GSA/DevSecOps/terraform/modules/vpc"
 
   name = "${var.vpc_name}"
 
@@ -24,7 +24,7 @@ module "mgmt_vpc" {
 }
 
 module "vpc_flow_log" {
-  source = "github.com/GSA/DevSecOps-Infrastructure//terraform//modules//vpc_flow_log"
+  source = "github.com/GSA/DevSecOps//terraform//modules//vpc_flow_log"
   vpc_name = "${var.vpc_name}"
   vpc_id = "${module.mgmt_vpc.vpc_id}"
 }
