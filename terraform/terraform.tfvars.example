@@ -9,6 +9,12 @@ jenkins_backup_s3_bucket = "s3-bucket-name"
 
 # The remaining variables can be removed or commented out, as they have defaults. Regardless of that, please make sure you consult with your operations group to make sure you get the proper CIDR ranges for your VPC. To customize the variable, uncomment it and replace the default value provided.
 
+# Type: string, must be a valid AWS region
+# region = "us-east-1"
+
+# Type: string, must be a valid AWS partition. If using GovCloud or some other special partition, you must edit this.
+# aws_partition = "aws"
+
 # Type: String (but make it a CIDR range like 10.0.0.0/16)
 # vpc_cidr = "10.0.0.0/16"
 

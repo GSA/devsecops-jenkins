@@ -5,7 +5,7 @@ module "jenkins_master_s3_backup" {
     bucket = "${var.jenkins_backup_s3_bucket}"
     versioning = "true"
     expiration_days = "30"
-    aws_partition = "${var.region}"
+    aws_partition = "${var.aws_partition}"
 }
 
 # resource "aws_s3_bucket" "jenkins_master_s3_backup" {
