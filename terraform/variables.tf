@@ -19,6 +19,14 @@ variable "jenkins_key_name" {
 variable "jenkins_backup_s3_bucket" {
   description = "Name of an S3 bucket to backup the jenkins configuration."
 }
+variable "jenkins_backup_s3_bucket_expiration_days" {
+  description = "Number of days to keep a backup file"
+  default = "30"
+}
+variable "jenkins_backup_s3_bucket_acl" {
+  description = "ACL of the backup bucket"
+  default = "private"
+}
 variable "region" {
   default = "us-east-1"
 }

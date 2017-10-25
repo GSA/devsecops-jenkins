@@ -9,6 +9,12 @@ jenkins_backup_s3_bucket = "s3-bucket-name"
 
 # The remaining variables can be removed or commented out, as they have defaults. Regardless of that, please make sure you consult with your operations group to make sure you get the proper CIDR ranges for your VPC. To customize the variable, uncomment it and replace the default value provided.
 
+# Type: string, integer only. Number of days to keep a backup file in the backup bucket for jenkins.
+# jenkins_backup_s3_bucket_expiration_days = "30"
+
+# Type: string, public or private
+# jenkins_backup_s3_bucket_acl = "private"
+
 # Type: string, must be a valid AWS region
 # region = "us-east-1"
 
