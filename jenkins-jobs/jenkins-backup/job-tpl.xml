@@ -60,7 +60,7 @@ export AWS_DEFAULT_REGION=&quot;${region}&quot;
 
 # Upload archive to S3
 echo &quot;Uploading archive to S3&quot;
-aws s3 cp jenkins-configuration.tar.gz s3://${jenkins_backup_s3_bucket}/${jenkins_backup_s3_key}/
+aws s3 cp --sse AES256 jenkins-configuration.tar.gz s3://${jenkins_backup_s3_bucket}/${jenkins_backup_s3_key}/
 
 # Remove tar.gz after it gets uploaded to S3
 rm -rf jenkins-configuration.tar.gz</command>

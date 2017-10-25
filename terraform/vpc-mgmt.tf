@@ -1,5 +1,5 @@
 module "mgmt_vpc" {
-  source = "github.com/terraform-aws-modules/terraform-aws-vpc"
+  source = "github.com/GSA/terraform-aws-vpc"
 
   name = "${var.vpc_name}"
 
@@ -19,12 +19,12 @@ module "mgmt_vpc" {
 # TODO: Update tags to conform to DevSecOps Framework
   tags {
     "Terraform" = "true"
-    "Repository" = "https://github.com/GSA/DevSecOps-Infrastructure"
+    "Repository" = "https://github.com/GSA/DevSecOps"
   }
 }
 
 module "vpc_flow_log" {
-  source = "github.com/GSA/DevSecOps-Infrastructure//terraform//modules//vpc_flow_log"
+  source = "github.com/GSA/DevSecOps//terraform//modules//vpc_flow_log"
   vpc_name = "${var.vpc_name}"
   vpc_id = "${module.mgmt_vpc.vpc_id}"
 }
