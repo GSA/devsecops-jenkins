@@ -11,34 +11,34 @@ output "vpc_name" {
   value = "${var.vpc_name}"
 }
 output "vpc_id" {
-  value = "${module.devsecops_vpc.vpc_id}"
+  value = "${module.mgmt_vpc.vpc_id}"
 }
 output "vpc_cidr_block" {
-  value = "${module.devsecops_vpc.vpc_cidr_block}"
+  value = "${module.mgmt_vpc.vpc_cidr_block}"
 }
 output "public_subnet_ids" {
-  value = "${module.devsecops_vpc.public_subnets}"
+  value = "${module.mgmt_vpc.public_subnets}"
 }
 output "public_subnet_cidrs" {
   value = "${var.app_public_subnet_cidrs}"
 }
 output "private_subnet_ids" {
-  value = "${module.app_vpc.private_subnets}"
+  value = "${module.mgmt_vpc.private_subnets}"
 }
 output "private_subnet_cidrs" {
   value = "${var.app_private_subnet_cidrs}"
 }
 output "database_subnet_ids" {
-  value = "${module.devsecops_vpc.database_subnets}"
+  value = "${module.mgmt_vpc.database_subnets}"
 }
 output "database_subnet_cidrs" {
-  value = "${var.app_database_subnet_cidrs}"
+  value = "${var.database_subnet_cidrs}"
 }
 output "database_subnet_group_name" {
-  value = "${module.devsecops_vpc.database_subnet_group}"
+  value = "${module.mgmt_vpc.database_subnet_group}"
 }
 output "default_security_group_id" {
-  value = "${module.app_vpc.default_security_group_id}"
+  value = "${module.mgmt_vpc.default_security_group_id}"
 }
 
 output "jenkins_public_ip" {

@@ -19,9 +19,12 @@ apply:
 	cd ../$(TERRAFORM_DIR) && terraform apply && terraform state pull > terraform.tfstate
 
 .PHONY: ansible
-ansible: install_roles init plan apply install_jenkins
+ansible: install_roles init plan apply harden_server install_jenkins
 
-debug: install_roles init plan apply install_jenkins_debug
+debug: install_roles init plan apply harden_server install_jenkins_debug
+
+harden_server:
+	cd $(PLAYBOOK_DIR) && TF_STATE=../../$(TERRAFORM_DIR)/terraform.tfstate ansible-playbook -i $(INVENTORY_PATH) --become --user=$(SSH_USER) harden_server.yml
 
 install_jenkins:
 	cd $(PLAYBOOK_DIR) && TF_STATE=../../$(TERRAFORM_DIR)/terraform.tfstate ansible-playbook -i $(INVENTORY_PATH) --become --user=$(SSH_USER) jenkins-master.yml --vault-password-file .vault_pass.txt
