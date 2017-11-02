@@ -5,3 +5,6 @@
 
   roles:
   - gsa_hardening
+
+  vars_files:
+    - ../group_vars/devsecops_mgmt_jenkins_master_eip/vars.yml
