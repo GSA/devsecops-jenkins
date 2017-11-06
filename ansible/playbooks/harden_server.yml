@@ -1,0 +1,10 @@
+---
+- hosts: devsecops_mgmt_jenkins_master_eip
+  become: true
+  name: Harden server via GSA-approved ansible role
+
+  roles:
+  - gsa_hardening
+
+  vars_files:
+    - ../group_vars/devsecops_mgmt_jenkins_master_eip/vars.yml
