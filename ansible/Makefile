@@ -19,7 +19,7 @@ apply:
 	cd ../$(TERRAFORM_DIR) && terraform apply && terraform state pull > terraform.tfstate
 
 .PHONY: ansible
-ansible: install_roles init plan apply harden_server install_jenkins
+ansible: install_roles init plan apply install_jenkins harden_server
 
 debug: install_roles init plan apply harden_server install_jenkins_debug
 
