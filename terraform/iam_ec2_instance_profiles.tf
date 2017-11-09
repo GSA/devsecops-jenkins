@@ -73,6 +73,6 @@ resource "aws_iam_role_policy_attachment" "add_jenkins_policy" {
 }
 
 resource "aws_iam_instance_profile" "jenkins_master_ec2_instance_profile" {
-    name = "jenkins_master_ec2_instance_profile"
+    name = "${var.jenkins_master_ec2_instance_profile_name}"
     role = "${aws_iam_role.jenkins_master_ec2_role.name}"
 }

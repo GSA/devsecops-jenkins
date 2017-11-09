@@ -106,6 +106,11 @@ variable "jenkins_iam_role_name" {
   type = "string"
   default = "jenkins_master_ec2_role"
 }
+variable "jenkins_master_ec2_instance_profile_name" {
+  description = "Instance profile name"
+  type = "string"
+  default = "jenkins_master_ec2_instance_profile"
+}
 variable "jenkins_private_master_dns" {
   description = "Private DNS hostname for the Jenkins instance"
   type = "string"
