@@ -1,8 +1,8 @@
-# devsecops-example-pipeline
+# devsecops-jenkins
 
-This project uses terraform and ansible to deploy a GSA DevSecOps environment, specifically the Management VPC. The example can be used to deploy a GSA DevSecOps Management VPC + Jenkins instance inside a GSA AWS account. This repo uses resources from [DevSecOps-Infrastructure](https://github.com/GSA/DevSecOps-Infrastructure) and [GSA.Jenkins](https://github.com/GSA/jenkins-deploy).
+This project uses terraform and ansible to deploy a GSA DevSecOps environment, specifically the Management VPC and Jenkins instance with RHEL hardening. This repo uses resources from [DevSecOps-Infrastructure](https://github.com/GSA/DevSecOps-Infrastructure), [GSA.Jenkins](https://github.com/GSA/jenkins-deploy) and [ansible-os-rhel-7](https://github.com/GSA/ansible-os-rhel-7/) to harden the server with GSA baselines.
 
-This example will deploy:
+This repo will deploy:
 
 * A VPC
 * A public application subnet
@@ -137,6 +137,12 @@ If youâ€™ve already deployed the DevSecOps-Infrastructure repo, chances are youâ
     Save the file in the text editor and then verify the encryption.
 
     If you wish, you can create another file called ".vault_pass.txt". Store this file in the /ansible/playbooks directory. This file should contain the vault password on a line by itself. If you do not wish to store the vault password on disk, then you must modify the playbook file /ansible/playbooks/jenkins-master.yml and remove the command reference to the file. You can ask interactively for the password or store the password file elsewhere. For more details, consult the [Ansible Vault](https://docs.ansible.com/ansible/playbooks_vault.html) documentation.
+
+### Hardening
+
+This repo also uses the GSA ansible role to harden the server according to GSA security baselines. The repo for the hardening is located at [this url](https://github.com/GSA/ansible-os-rhel-7/).
+
+Hardening variables can be overridden in the vars.yml file mentioned above. Simply scan the playbooks within the role and set variables in vars.yml according to your specifications if there is a need to override the hardening baselines. This deployment, as configured within source control, should not need to be overriden.
 
 ## Deployment
 
