@@ -53,7 +53,7 @@ resource "aws_iam_policy" "jenkins_iam_role_permissions" {
         "Action": [
             "s3:CreateBucket",
             "s3:GetObject",
-            "s3:ListAllMyBuckets"
+            "s3:ListAllMyBuckets",
             "s3:ListBucket",
             "s3:GetBucketLocation",
             "s3:GetBucketWebsiteConfiguration"
