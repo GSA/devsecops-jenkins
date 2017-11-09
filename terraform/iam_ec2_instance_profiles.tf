@@ -32,7 +32,18 @@ resource "aws_iam_policy" "jenkins_iam_role_permissions" {
         "Action": [
             "ec2:*",
             "rds:*",
-            "dynamodb:*"
+            "dynamodb:*",
+            "autoscaling:*",
+            "cloudwatch:PutMetricAlarm",
+            "route53:*",
+            "route53domains:*",
+            "cloudfront:ListDistributions",
+            "elasticloadbalancing:DescribeLoadBalancers",
+            "elasticbeanstalk:DescribeEnvironments",
+            "sns:ListTopics",
+            "sns:ListSubscriptionsByTopic",
+            "cloudwatch:DescribeAlarms",
+            "cloudwatch:GetMetricStatistics"
         ],
         "Resource": "*"
     },
@@ -43,6 +54,9 @@ resource "aws_iam_policy" "jenkins_iam_role_permissions" {
             "s3:CreateBucket",
             "s3:GetObject",
             "s3:ListAllMyBuckets"
+            "s3:ListBucket",
+            "s3:GetBucketLocation",
+            "s3:GetBucketWebsiteConfiguration",
         ],
         "Resource": [
             "*"
