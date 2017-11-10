@@ -1,6 +1,6 @@
 # devsecops-jenkins
 
-This project uses terraform and ansible to deploy a GSA DevSecOps environment, specifically the Management VPC and Jenkins instance with RHEL hardening. This repo uses resources from [DevSecOps-Infrastructure](https://github.com/GSA/DevSecOps-Infrastructure), [GSA.Jenkins](https://github.com/GSA/jenkins-deploy) and [ansible-os-rhel-7](https://github.com/GSA/ansible-os-rhel-7/) to harden the server with GSA baselines.
+This project uses terraform and ansible to deploy a GSA DevSecOps environment, specifically the Management VPC and Jenkins instance with RHEL hardening. This repo uses resources from [DevSecOps](https://github.com/GSA/DevSecOps), [Jenkins](https://github.com/GSA/devsecops-jenkins) and [ansible-os-rhel-7](https://github.com/GSA/ansible-os-rhel-7/) to harden the server with GSA baselines.
 
 This repo will deploy:
 
