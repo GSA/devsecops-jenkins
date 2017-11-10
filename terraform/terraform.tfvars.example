@@ -76,6 +76,9 @@ jenkins_backup_s3_bucket = "s3-bucket-name"
 # jenkins_iam_role_name = "jenkins_master_ec2_role"
 
 # Type: string
+# jenkins_master_ec2_instance_profile_name = "jenkins_master_ec2_instance_profile"
+
+# Type: string
 # jenkins_private_master_dns = "jenkins-master.devsecops.local"
 
 # Type: string
