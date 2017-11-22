@@ -1,10 +1,32 @@
 variable "aws_az1" {
   type = "string"
   description = "Must be a valid AWS availability zone"
+  default = "us-east-1a"
 }
 variable "aws_az2" {
   type = "string"
   description = "Must be a valid AWS availability zone"
+  default = "us-east-1b"
+}
+variable "aws_az3" {
+  type = "string"
+  description = "Must be a valid AWS availability zone"
+  default = "us-east-1c"
+}
+variable "aws_az4" {
+  type = "string"
+  description = "Must be a valid AWS availability zone"
+  default = "us-east-1d"
+}
+variable "aws_az5" {
+  type = "string"
+  description = "Must be a valid AWS availability zone"
+  default = "us-east-1e"
+}
+variable "aws_az6" {
+  type = "string"
+  description = "Must be a valid AWS availability zone"
+  default = "us-east-1f"
 }
 variable "private_vpc_zone_name" {
   type = "string"
