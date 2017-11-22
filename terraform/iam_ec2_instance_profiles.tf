@@ -30,13 +30,7 @@ resource "aws_iam_policy" "jenkins_iam_role_permissions" {
         "Sid": "AllowActions",
         "Effect": "Allow",
         "Action": [
-            "ec2:*",
-            "rds:*",
-            "dynamodb:*",
-            "autoscaling:*",
             "cloudwatch:PutMetricAlarm",
-            "route53:*",
-            "route53domains:*",
             "cloudfront:ListDistributions",
             "elasticloadbalancing:DescribeLoadBalancers",
             "elasticbeanstalk:DescribeEnvironments",
@@ -70,6 +64,41 @@ EOF
 resource "aws_iam_role_policy_attachment" "add_jenkins_policy" {
     role       = "${aws_iam_role.jenkins_master_ec2_role.name}"
     policy_arn = "${aws_iam_policy.jenkins_iam_role_permissions.arn}"
+}
+
+resource "aws_iam_role_policy_attachment" "add_rds_policy" {
+    role       = "${aws_iam_role.jenkins_master_ec2_role.name}"
+    policy_arn = "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "add_ec2_policy" {
+    role       = "${aws_iam_role.jenkins_master_ec2_role.name}"
+    policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "add_autoscaling_policy" {
+    role       = "${aws_iam_role.jenkins_master_ec2_role.name}"
+    policy_arn = "arn:aws:iam::aws:policy/AutoScalingFullAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "add_s3_policy" {
+    role       = "${aws_iam_role.jenkins_master_ec2_role.name}"
+    policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "add_dynamodb_policy" {
+    role       = "${aws_iam_role.jenkins_master_ec2_role.name}"
+    policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "add_vpc_policy" {
+    role       = "${aws_iam_role.jenkins_master_ec2_role.name}"
+    policy_arn = "arn:aws:iam::aws:policy/AmazonVPCFullAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "add_route53_policy" {
+    role       = "${aws_iam_role.jenkins_master_ec2_role.name}"
+    policy_arn = "arn:aws:iam::aws:policy/AmazonRoute53FullAccess"
 }
 
 resource "aws_iam_instance_profile" "jenkins_master_ec2_instance_profile" {
