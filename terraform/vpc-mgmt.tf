@@ -12,7 +12,7 @@ module "mgmt_vpc" {
   enable_dns_hostnames = "${var.enable_dns_hostnames}"
   enable_dns_support = "${var.enable_dns_support}"
 
-  azs = ["${var.aws_az1}", "${var.aws_az2}"]
+  azs = ["${var.aws_az1}", "${var.aws_az2}", "${var.aws_az3}", "${var.aws_az4}", "${var.aws_az5}", "${var.aws_az6}"]
 
   create_database_subnet_group = "${var.create_database_subnet_group}"
 

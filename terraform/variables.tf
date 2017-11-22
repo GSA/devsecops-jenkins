@@ -59,13 +59,13 @@ variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }
 variable "app_public_subnet_cidrs" {
-  default = ["10.0.1.0/24", "10.0.2.0/24"]
+  default = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24", "10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
 }
 variable "app_private_subnet_cidrs" {
-  default = ["10.0.10.0/24", "10.0.20.0/24"]
+  default = ["10.0.10.0/24", "10.0.20.0/24", "10.0.30.0/24", "10.0.40.0/24", "10.0.50.0/24", "10.0.60.0/24"]
 }
 variable "database_subnet_cidrs" {
-  default = ["10.0.100.0/24", "10.0.101.0/24"]
+  default = ["10.0.100.0/24", "10.0.101.0/24", "10.0.103.0/24", "10.0.104.0/24", "10.0.105.0/24", "10.0.106.0/24"]
 }
 variable "create_database_subnet_group" {
   default = "true"
